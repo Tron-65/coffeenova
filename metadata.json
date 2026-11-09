@@ -1,0 +1,6 @@
+{
+  "name": "CaféNova POS - Cafeteria Management",
+  "description": "Interactive game-like POS and real-time inventory management system for cafeterias optimized for tablets and smartphones with cloud sync.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

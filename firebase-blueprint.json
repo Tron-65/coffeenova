@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Cafeteria menu item with stock tracking and pricing",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "maxLength": 50 },
+        "price": { "type": "number" },
+        "stock": { "type": "number" },
+        "minStock": { "type": "number" },
+        "image": { "type": "string" },
+        "popular": { "type": "boolean" }
+      },
+      "required": ["id", "name", "category", "price", "stock"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Completed or active sales order",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "items": { "type": "array" },
+        "totalAmount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "type": { "type": "string" },
+        "tableNumber": { "type": "string" },
+        "cashierId": { "type": "string" },
+        "cashierName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "items", "totalAmount", "type", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": { "$ref": "Product" },
+      "description": "Cafeteria products and inventory stock levels"
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "Order" },
+      "description": "Recorded sales orders and table tabs"
+    }
+  }
+}
